@@ -1,0 +1,182 @@
+.ds-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 10px; /* Substituindo var(--spacing-sm) */
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: #9e9e9e; /* Substituindo var(--color-gray500) */
+    color: #ffffff; /* Substituindo var(--color-white) */
+  
+    .ds-button__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 0; /* Substituindo var(--spacing-xs) */
+    }
+  
+    &[class*="--round"] {
+      padding: 1px 4px 0px;
+    }
+  
+    &[class*="--green"] {
+      background-color: #388e3c; /* Substituindo var(--color-green) */
+    }
+  
+    &[class*="--orange"] {
+      background-color: #ff9800; /* Substituindo var(--color-orange100) */
+    }
+  
+    &[class*="--gray"] {
+      background-color: #616161; /* Substituindo var(--color-gray700) */
+    }
+  
+    &[class*="--pink"] {
+      background-color: #f50057; /* Substituindo var(--color-pink200) */
+    }
+  
+    &[class*="--pink"][class*="--bg"] {
+      background-color: transparent;
+      color: #f50057; /* Substituindo var(--color-pink200) */
+    }
+  
+    &[class*="--lightPink"] {
+      background-color: #f8bbd0; /* Substituindo var(--color-pink100) */
+    }
+  
+    &[class*="--yellow"] {
+      background-color: #ffeb3b; /* Substituindo var(--color-yellow) */
+    }
+  
+    &[class*="--blue"][class*="--bg"] {
+      background-color: transparent;
+      color: #2196f3; /* Substituindo var(--color-blue) */
+    }
+  
+    &[class*="--blue"] {
+      background-color: #2196f3; /* Substituindo var(--color-blue) */
+    }
+  
+    &[class*="--darkGray"] {
+      background-color: #424242; /* Substituindo var(--color-gray800) */
+    }
+  
+    &[class*="--white"] {
+      background-color: #ffffff; /* Substituindo var(--color-white) */
+      border: 1px solid #424242; /* Substituindo var(--color-gray800) */
+      color: #424242; /* Substituindo var(--color-gray800) */
+    }
+  
+    &[class*="--light"] {
+      color: #ffffff; /* Substituindo var(--color-white) */
+    }
+  
+    &[class*="--dark"] {
+      color: #424242; /* Substituindo var(--color-gray800) */
+    }
+  
+    &[class*="--textcolorpink"] {
+      color: #f50057; /* Substituindo var(--color-pink200) */
+      background-color: transparent;
+    }
+  
+    &[class*="--textcolorgreen"] {
+      color: #388e3c; /* Substituindo var(--color-green) */
+      background-color: transparent;
+    }
+  
+    &[class*="--textcolorblue"] {
+      color: #2196f3; /* Substituindo var(--color-blue) */
+      background-color: transparent;
+    }
+  
+    &[class*="--textcolorgray"] {
+      color: #424242; /* Substituindo var(--color-gray800) */
+      background-color: transparent;
+    }
+  
+    &[class*="--transparent"] {
+      background-color: transparent;
+      color: #212121; /* Substituindo var(--color-gray900) */
+      font-weight: 800;
+      border-bottom: 4px solid transparent;
+    }
+  
+    &[class*="--left"] {
+      display: flex;
+      gap: 5px;
+    }
+  
+    &[class*="--top"] {
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      font-size: 0.75rem; /* Substituindo var(--size-xxs) */
+    }
+  
+    &[class*="--top"] .ds-button__icon {
+      background-color: #616161; /* Substituindo var(--color-gray700) */
+      padding: 4px 16px; /* Substituindo var(--spacing-xs) var(--spacing-md) */
+      border-radius: 25px;
+      margin-bottom: 5px;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    &[class*="--active"] .ds-button__icon {
+      background-color: #f50057; /* Substituindo var(--color-pink200) */
+    }
+  
+    &[class*="--active"][class*="--transparent"] {
+      color: #f50057; /* Substituindo var(--color-pink200) */
+      border-radius: 0;
+      border-bottom: 4px solid #f50057; /* Substituindo var(--color-pink200) */
+    }
+  
+    &[class*="--pink"][class*="--border"] {
+      font-weight: 500;
+      color: #f50057; /* Substituindo var(--color-pink200) */
+      background-color: #ffffff; /* Substituindo var(--color-white) */
+      border: 1px solid #f50057; /* Substituindo var(--color-pink200) */
+    }
+  
+    &[class*="--gray"][class*="--border"] {
+      font-weight: 500;
+      color: #424242; /* Substituindo var(--color-gray800) */
+      background-color: #ffffff; /* Substituindo var(--color-white) */
+      border: 1px solid #424242; /* Substituindo var(--color-gray800) */
+    }
+  
+    & [class*="--xs"] {
+      span {
+        font-size: 12px; /* Substituindo var(--size-xs) */
+      }
+    }
+  
+    & [class*="--sm"] {
+      span {
+        font-size: 14px; /* Substituindo var(--size-sm) */
+      }
+    }
+  
+    & [class*="--md"] {
+      span {
+        font-size: 16px; /* Substituindo var(--size-md) */
+      }
+    }
+  
+    & [class*="--lg"] {
+      span {
+        font-size: 18px; /* Substituindo var(--size-lg) */
+      }
+    }
+  }
+  

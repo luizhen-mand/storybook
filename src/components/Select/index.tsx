@@ -1,0 +1,138 @@
+import React, { useState, useEffect, JSX } from 'react'
+import type { SelectRootProps, SelectLabelProps, SelectInputProps, SelectAlertProps } from './types'
+import * as SelectRadix from '@radix-ui/react-select'
+import { IoIosArrowDown, IoMdSearch, IoMdRadioButtonOff, IoMdRadioButtonOn } from 'react-icons/io'
+import './select.css'
+
+function SelectRoot({ children, size, className, ...props }: SelectRootProps): JSX.Element {
+  return (
+    <div
+      className={`ds-select${size ? ` ds-select--${size}` : ''}${className ? ` ${className}` : ''}`}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
+
+function SelectLabel({ children, required, ...props }: SelectLabelProps): JSX.Element {
+  return (
+    <p
+      className='ds-select__label'
+      {...props}
+    >
+      {children}
+      {required && (
+        <span className='ds-select__label--required'>*</span>
+      )}
+    </p>
+  )
+}
+
+function SelectInput({ options, value, onValueChange, color, placeholder, search }: SelectInputProps): JSX.Element {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [currentColor, setCurrentColor] = useState('gray')
+
+  const filteredOptions = options.filter(option =>
+    option.label.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  useEffect(() => {
+    const selectedOption = options.find(option => option.value === value)
+    setCurrentColor(selectedOption?.color || 'gray')
+  }, [value, options])
+
+  return (
+    <SelectRadix.Root value={value} onValueChange={onValueChange}>
+      <SelectRadix.Trigger
+        className={`ds-select__trigger ds-select__trigger--${color ?? currentColor}`}
+        aria-labelledby="select-label"
+      >
+        <SelectRadix.Value
+          placeholder={placeholder}
+          className='ds-select__value'
+        />
+        <SelectRadix.Icon className="SelectIcon" asChild>
+          <IoIosArrowDown />
+        </SelectRadix.Icon>
+      </SelectRadix.Trigger>
+      <SelectRadix.Portal>
+        <SelectRadix.Content
+          className='ds-select__content'
+          position="popper"
+          sideOffset={0}
+        >
+          <SelectRadix.Viewport className="ds-select__viewport">
+            {search && (
+              <div className="ds-select__search">
+                <input
+                  type="text"
+                  className='ds-select__searchInput'
+                  value={searchTerm}
+                  onChange={(e) => { setSearchTerm(e.target.value) }}
+                  onKeyDown={(e) => { e.stopPropagation() }}
+                />
+                <span className="ds-select__searchIcon">
+                  <IoMdSearch />
+                </span>
+              </div>
+            )}
+            {filteredOptions.length > 0
+              ? (
+                filteredOptions.map((option) => (
+                  <SelectRadix.Item
+                    className='ds-select__item'
+                    key={option.value}
+                    value={option.value}
+                  >
+                    <span className="ds-select__itemIcon">
+                      {value === option.value ? <IoMdRadioButtonOn /> : <IoMdRadioButtonOff />}
+                    </span>
+                    <SelectRadix.ItemText asChild>
+                      <span
+                        className={`ds-select__itemLabel ds-select__itemLabel--${option.color || 'gray'}`}
+                      >
+                        {option.label}
+                      </span>
+                    </SelectRadix.ItemText>
+                  </SelectRadix.Item>
+                ))
+              )
+              : (
+                <p className="ds-select__searchMessage">Nenhum resultado encontrado.</p>
+              )}
+          </SelectRadix.Viewport>
+        </SelectRadix.Content>
+      </SelectRadix.Portal>
+    </SelectRadix.Root>
+  )
+}
+
+function SelectSearch({ children, ...props }: SelectLabelProps): JSX.Element {
+  return (
+    <div
+      className='ds-select__search'
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
+
+function SelectAlert({ children }: SelectAlertProps): JSX.Element {
+  return (
+    <p
+      className='ds-select__alert'
+    >
+      {children}
+    </p>
+  )
+}
+
+export const Select = {
+  Root: SelectRoot,
+  Label: SelectLabel,
+  Input: SelectInput,
+  Search: SelectSearch,
+  Alert: SelectAlert
+}
