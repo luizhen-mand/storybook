@@ -1,0 +1,292 @@
+import { Meta } from '@storybook/addon-docs';
+import Head from 'next/head';
+
+<Meta title="Guia de Estilo" />
+
+# Guia de Estilo
+
+Este documento apresenta os tokens de design utilizados no sistema. Eles devem ser utilizados para garantir a consistência visual em toda a aplicação.
+
+## Cores
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '16px' }}>
+  <div><strong>Token</strong></div>
+  <div><strong>Cor</strong></div>
+  <div><strong>Código HEX</strong></div>
+  <div><strong>Exemplo</strong></div>
+
+  <div>`--blue`</div>
+  <div>Azul</div>
+  <div>`#33A7EF`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#33A7EF', width: '100px', height: '40px' }}></div>
+
+  <div>`--green`</div>
+  <div>Verde</div>
+  <div>`#10B17F`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#10B17F', width: '100px', height: '40px' }}></div>
+
+  <div>`--pink100`</div>
+  <div>Rosa</div>
+  <div>`#EF339F`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#EF339F', width: '100px', height: '40px' }}></div>
+
+  <div>`--pink200`</div>
+  <div>Rosa Pink</div>
+  <div>`#E4003F`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#E4003F', width: '100px', height: '40px' }}></div>
+
+  <div>`--yellow`</div>
+  <div>Amarelo</div>
+  <div>`#EFD237`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#EFD237', width: '100px', height: '40px' }}></div>
+
+  <div>`--orange100`</div>
+  <div>Laranja</div>
+  <div>`#EF8733`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#EF8733', width: '100px', height: '40px' }}></div>
+
+  <div>`--orange200`</div>
+  <div>Laranja Escuro</div>
+  <div>`#ED5525`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#ED5525', width: '100px', height: '40px' }}></div>
+
+  <div>`--white`</div>
+  <div>Branco</div>
+  <div>`#FFFFFF`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#FFFFFF', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray100`</div>
+  <div>Cinza Claro</div>
+  <div>`#FCFCFC`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#FCFCFC', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray200`</div>
+  <div>Cinza Claro</div>
+  <div>`#F6F6F6`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#F6F6F6', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray300`</div>
+  <div>Cinza Claro</div>
+  <div>`#EEEEEE`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#EEEEEE', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray500`</div>
+  <div>Cinza Médio</div>
+  <div>`#CCCCCC`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#CCCCCC', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray700`</div>
+  <div>Cinza Médio</div>
+  <div>`#808080`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#808080', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray800`</div>
+  <div>Cinza Escuro</div>
+  <div>`#434343`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#434343', width: '100px', height: '40px' }}></div>
+
+  <div>`--gray900`</div>
+  <div>Cinza Médio</div>
+  <div>`#333333`</div>
+  <div style={{ border: '1px solid black', backgroundColor: '#333333', width: '100px', height: '40px' }}></div>
+</div>
+
+---
+
+## Tamanhos da tipografia
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+  <div><strong>Token</strong></div>
+  <div><strong>Tamanho</strong></div>
+  <div><strong>Exemplo</strong></div>
+
+  <div>`--size-xxs`</div>
+  <div>14px</div>
+  <p style={{ fontSize: '14px' }}>Texto</p>
+
+  <div>`--size-xs`</div>
+  <div>16px</div>
+  <p style={{ fontSize: '16px' }}>Texto</p>
+
+  <div>`--size-sm`</div>
+  <div>20px</div>
+  <p style={{ fontSize: '20px' }}>Texto</p>
+
+  <div>`--size-md`</div>
+  <div>24px</div>
+  <p style={{ fontSize: '24px' }}>Texto</p>
+
+  <div>`--size-lg`</div>
+  <div>30px</div>
+  <p style={{ fontSize: '30px' }}>Texto</p>
+
+  <div>`--size-xl`</div>
+  <div>34px</div>
+  <p style={{ fontSize: '34px' }}>Texto</p>
+</div>
+
+---
+
+## Tamanhos de Espaçamento
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+  <div><strong>Token</strong></div>
+  <div><strong>Valor (px)</strong></div>
+  <div><strong>Exemplo</strong></div>
+
+  <div>`--spacing-xs`</div>
+  <div>4px</div>
+  <div style={{ height: '4px', backgroundColor: '#ccc' }}></div>
+
+  <div>`--spacing-sm`</div>
+  <div>8px</div>
+  <div style={{ height: '8px', backgroundColor: '#ccc' }}></div>
+
+  <div>`--spacing-md`</div>
+  <div>16px</div>
+  <div style={{ height: '16px', backgroundColor: '#ccc' }}></div>
+
+  <div>`--spacing-lg`</div>
+  <div>32px</div>
+  <div style={{ height: '32px', backgroundColor: '#ccc' }}></div>
+</div>
+
+---
+
+## Media Queries
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+  <div><strong>Token</strong></div>
+  <div><strong>Valor (px)</strong></div>
+
+  <div>`--screen-sm`</div>
+  <div>325px</div>
+
+  <div>`--screen-md`</div>
+  <div>420px</div>
+
+  <div>`--screen-lg`</div>
+  <div>520px</div>
+
+  <div>`--screen-tablet`</div>
+  <div>768px</div>
+
+  <div>`--screen-laptop`</div>
+  <div>1024px</div>
+
+  <div>`--screen-desktop`</div>
+  <div>1440px</div>
+
+  <div>`--screen-widescreen`</div>
+  <div>1920px</div>
+</div>
+
+<style>
+  {`
+  .sb-icons svg {
+    font-size: 26px;
+    margin-bottom: -5px;
+  }
+
+  .sb-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+  }
+
+  .sb-section a:not(h1 a, h2 a, h3 a) {
+    font-size: 14px;
+  }
+
+  .sb-section-item, .sb-grid-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sb-section-item-heading {
+    padding-top: 20px !important;
+    padding-bottom: 5px !important;
+    margin: 0 !important;
+  }
+  .sb-section-item-paragraph {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .sb-chevron {
+    margin-left: 5px;
+  }
+
+  .sb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px 20px;
+  }
+
+  .sb-socials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sb-socials p {
+    margin-bottom: 10px;
+  }
+
+  .sb-explore-image {
+    max-height: 32px;
+    align-self: flex-start;
+  }
+
+  .sb-addon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #EEF3F8;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #EEF3F8;
+    height: 180px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  .sb-addon-text {
+    padding-left: 48px;
+    max-width: 240px;
+  }
+
+  .sb-addon-text h4 {
+    padding-top: 0px;
+  }
+
+  .sb-addon-img {
+    position: absolute;
+    left: 345px;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    overflow: hidden;
+  }
+
+  .sb-addon-img img {
+    width: 650px;
+    transform: rotate(-15deg);
+    margin-left: 40px;
+    margin-top: -72px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
+    backface-visibility: hidden;
+  }
+
+  `}
+</style>
