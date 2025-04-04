@@ -1,0 +1,142 @@
+@import "../style.css";
+
+.ds-select {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-default);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  width: 100%;
+  max-width: var(--screen-lg);
+  border: 1px solid var(--color-gray500);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.ds-select__label {
+  font-size: var(--size-xs);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ds-select__label--required {
+  color: var(--color-pink200);
+  margin-left: 4px;
+}
+
+.ds-select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: var(--color-gray200);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ds-select__trigger:hover {
+  background-color: var(--color-gray300);
+}
+
+.ds-select__trigger--gray {
+  border: 1px solid var(--color-gray500);
+}
+
+.ds-select__trigger--green {
+  border: 1px solid var(--color-green);
+}
+
+.ds-select__trigger--orange {
+  border: 1px solid var(--color-orange100);
+}
+
+.ds-select__trigger--pink {
+  border: 1px solid var(--color-pink100);
+}
+
+.ds-select__content {
+  margin-top: 10px;
+  width: 500px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray500);
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ds-select__viewport {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ds-select__item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ds-select__item:hover {
+  background-color: var(--color-gray200);
+}
+
+.ds-select__itemIcon {
+  margin-right: 8px;
+  font-size: var(--size-sm);
+}
+
+.ds-select__itemLabel {
+  font-size: var(--size-xs);
+}
+
+.ds-select__itemLabel--gray {
+  color: var(--color-gray900);
+}
+
+.ds-select__itemLabel--green {
+  color: var(--color-green);
+}
+
+.ds-select__itemLabel--orange {
+  color: var(--color-orange200);
+}
+
+.ds-select__itemLabel--pink {
+  color: var(--color-pink100);
+}
+
+.ds-select__search {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: var(--color-gray100);
+  border-bottom: 1px solid var(--color-gray500);
+}
+
+.ds-select__searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: var(--size-xs);
+  padding: 4px 8px;
+  background: transparent;
+}
+
+.ds-select__searchIcon {
+  font-size: var(--size-sm);
+  color: var(--color-gray700);
+}
+
+.ds-select__searchMessage {
+  padding: 10px;
+  font-size: var(--size-xs);
+  color: var(--color-gray900);
+  text-align: center;
+}
+
+.ds-select__alert {
+  color: var(--color-pink200);
+  font-size: var(--size-xs);
+  margin-top: 5px;
+}

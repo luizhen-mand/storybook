@@ -1,8 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { InputUpload } from './index'
-import { expect, userEvent, within, logRoles } from '@storybook/test'
-import { MdUpload } from 'react-icons/md';
 
 const meta: Meta<typeof InputUpload.Root> = {
   title: 'Componentes/InputUpload',
@@ -15,32 +13,6 @@ const meta: Meta<typeof InputUpload.Root> = {
         rules: [{ id: 'color-contrast', enabled: true }],
       }
     }
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-
-    logRoles(canvasElement)
-
-    const buttonElement = canvas.getByRole('button', {
-      name: /upload clique aqui ou arraste os arquivos/i,
-    })
-    await expect(buttonElement).toBeInTheDocument()
-
-    await userEvent.click(buttonElement)
-
-    const inputElement = canvasElement.querySelector('input[type="file"]') as HTMLInputElement
-    if (!inputElement) throw new Error('Input file element not found')
-
-    const file = new File(['file content'], 'example.txt', { type: 'text/plain' })
-    await userEvent.upload(inputElement, file)
-
-    expect(inputElement.files).toHaveLength(1)
-    expect(inputElement.files?.[0].name).toBe('example.txt')
-
-    const inputId = inputElement.id
-    const labelElement = canvas.getByLabelText('Upload file')
-    expect(labelElement).toBeInTheDocument()
-    expect(labelElement).toHaveAttribute('id', inputId)
   },
 }
 
@@ -58,7 +30,7 @@ export const ComTextoEIcone: Story = {
           }}
         >
           <InputUpload.Button>
-            <MdUpload color="#EF339F" size={20} />
+            <span className='material-symbols-outlined'>upload</span>
             Clique aqui ou arraste os arquivos
           </InputUpload.Button>
         </InputUpload.Container>

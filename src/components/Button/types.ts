@@ -4,7 +4,7 @@ export interface ButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement>
   children: ReactNode
   iconPosition?: 'top' | 'left'
   bgcolor?: 'green' | 'orange' | 'gray' | 'pink' | 'transparent' | 'white' | 'yellow' | 'blue' | 'lightPink' | 'darkGray'
-  color?: 'gray' | 'pink' | 'blue' | 'green'
+  color?: 'gray' | 'pink' | 'blue' | 'green' 
   textColor?: 'light' | 'dark'
   border?: boolean
   round?: boolean

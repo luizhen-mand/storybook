@@ -1,13 +1,12 @@
 import React, { useState, useEffect, JSX } from 'react'
 import type { SelectRootProps, SelectLabelProps, SelectInputProps, SelectAlertProps } from './types'
 import * as SelectRadix from '@radix-ui/react-select'
-import { IoIosArrowDown, IoMdSearch, IoMdRadioButtonOff, IoMdRadioButtonOn } from 'react-icons/io'
-import './select.css'
+import styles from './select.module.css'
 
 function SelectRoot({ children, size, className, ...props }: SelectRootProps): JSX.Element {
   return (
     <div
-      className={`ds-select${size ? ` ds-select--${size}` : ''}${className ? ` ${className}` : ''}`}
+      className={`${styles['ds-select']}${size ? ` ${styles[`ds-select--${size}`]}` : ''}${className ? ` ${className}` : ''}`}
       {...props}
     >
       {children}
@@ -18,12 +17,12 @@ function SelectRoot({ children, size, className, ...props }: SelectRootProps): J
 function SelectLabel({ children, required, ...props }: SelectLabelProps): JSX.Element {
   return (
     <p
-      className='ds-select__label'
+      className={styles['ds-select__label']}
       {...props}
     >
       {children}
       {required && (
-        <span className='ds-select__label--required'>*</span>
+        <span className={styles['ds-select__label--required']}>*</span>
       )}
     </p>
   )
@@ -45,35 +44,35 @@ function SelectInput({ options, value, onValueChange, color, placeholder, search
   return (
     <SelectRadix.Root value={value} onValueChange={onValueChange}>
       <SelectRadix.Trigger
-        className={`ds-select__trigger ds-select__trigger--${color ?? currentColor}`}
+        className={`${styles['ds-select__trigger']} ${styles[`ds-select__trigger--${color ?? currentColor}`]}`}
         aria-labelledby="select-label"
       >
         <SelectRadix.Value
           placeholder={placeholder}
-          className='ds-select__value'
+          className={styles['ds-select__value']}
         />
-        <SelectRadix.Icon className="SelectIcon" asChild>
-          <IoIosArrowDown />
+        <SelectRadix.Icon className={styles.SelectIcon} asChild>
+          <span className="material-symbols-outlined">arrow_drop_down</span>
         </SelectRadix.Icon>
       </SelectRadix.Trigger>
       <SelectRadix.Portal>
         <SelectRadix.Content
-          className='ds-select__content'
+          className={styles['ds-select__content']}
           position="popper"
           sideOffset={0}
         >
-          <SelectRadix.Viewport className="ds-select__viewport">
+          <SelectRadix.Viewport className={styles['ds-select__viewport']}>
             {search && (
-              <div className="ds-select__search">
+              <div className={styles['ds-select__search']}>
                 <input
                   type="text"
-                  className='ds-select__searchInput'
+                  className={styles['ds-select__searchInput']}
                   value={searchTerm}
                   onChange={(e) => { setSearchTerm(e.target.value) }}
                   onKeyDown={(e) => { e.stopPropagation() }}
                 />
-                <span className="ds-select__searchIcon">
-                  <IoMdSearch />
+                <span className={`${styles['ds-select__searchIcon']} material-symbols-outlined`}>
+                  search
                 </span>
               </div>
             )}
@@ -81,16 +80,16 @@ function SelectInput({ options, value, onValueChange, color, placeholder, search
               ? (
                 filteredOptions.map((option) => (
                   <SelectRadix.Item
-                    className='ds-select__item'
+                    className={styles['ds-select__item']}
                     key={option.value}
                     value={option.value}
                   >
-                    <span className="ds-select__itemIcon">
-                      {value === option.value ? <IoMdRadioButtonOn /> : <IoMdRadioButtonOff />}
+                    <span className={`${styles['ds-select__itemIcon']} material-symbols-outlined`}>
+                      {value === option.value ? 'radio_button_checked' : 'radio_button_unchecked'}
                     </span>
                     <SelectRadix.ItemText asChild>
                       <span
-                        className={`ds-select__itemLabel ds-select__itemLabel--${option.color || 'gray'}`}
+                        className={`${styles['ds-select__itemLabel']} ${styles[`ds-select__itemLabel--${option.color || 'gray'}`]}`}
                       >
                         {option.label}
                       </span>
@@ -99,7 +98,7 @@ function SelectInput({ options, value, onValueChange, color, placeholder, search
                 ))
               )
               : (
-                <p className="ds-select__searchMessage">Nenhum resultado encontrado.</p>
+                <p className={styles['ds-select__searchMessage']}>Nenhum resultado encontrado.</p>
               )}
           </SelectRadix.Viewport>
         </SelectRadix.Content>
@@ -111,7 +110,7 @@ function SelectInput({ options, value, onValueChange, color, placeholder, search
 function SelectSearch({ children, ...props }: SelectLabelProps): JSX.Element {
   return (
     <div
-      className='ds-select__search'
+      className={styles['ds-select__search']}
       {...props}
     >
       {children}
@@ -122,7 +121,7 @@ function SelectSearch({ children, ...props }: SelectLabelProps): JSX.Element {
 function SelectAlert({ children }: SelectAlertProps): JSX.Element {
   return (
     <p
-      className='ds-select__alert'
+      className={styles['ds-select__alert']}
     >
       {children}
     </p>

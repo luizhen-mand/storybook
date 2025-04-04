@@ -1,0 +1,14 @@
+
+@import '../style.css';
+
+.footer {
+  background: var(--color-gray100);
+  padding: var(--spacing-md);
+  text-align: center;
+  border-top: 1px solid var(--color-gray300);
+}
+
+.footer__text {
+  font-size: var(--size-sm);
+  color: var(--color-gray700);
+}

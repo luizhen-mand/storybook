@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './index'
 import { expect, userEvent, within } from '@storybook/test'
-import { AiOutlineFolderOpen, AiOutlineComment, AiOutlinePayCircle, AiOutlineBell, AiOutlineUser } from 'react-icons/ai'
-import './button.css'
 
 const meta: Meta<typeof Button.Root> = {
   title: 'Componentes/Button',
@@ -51,7 +49,7 @@ export const IconeLateral: Story = {
   render: (args) => (
     <Button.Root {...args}>
       <Button.Icon>
-        <AiOutlineFolderOpen />
+        <span className="material-symbols-outlined">folder_open</span>
       </Button.Icon>
       CLIQUE AQUI
     </Button.Root>
@@ -60,67 +58,7 @@ export const IconeLateral: Story = {
 
 export const IconeAcima: Story = {
   args: {
-    active: true,
-    textColor: 'dark'
-  },
-
-  argTypes: {
-    active: {
-      options: ['true', 'false'],
-      control: {
-        type: 'boolean'
-      }
-    },
-    textColor: {
-      options: ['light', 'dark'],
-      control: {
-        type: 'select'
-      }
-    }
-  },
-
-  render: (args) => (
-    <div style={{ padding: '25px 50px', backgroundColor: '#a8a8a8' }}>
-      <Button.Root iconPosition='top' {...args}>
-        <Button.Icon>
-          <AiOutlineComment />
-        </Button.Icon>
-        Clique aqui
-      </Button.Root>
-    </div>
-  )
-}
-
-export const ComBorda: Story = {
-  args: {
-    border: true,
-    bgcolor: 'pink'
-  },
-
-  argTypes: {
-    bgcolor: {
-      options: ['pink', 'gray'],
-      control: {
-        type: 'select'
-      }
-    }
-  },
-
-  render: (args) => (
-    <div>
-      <Button.Root {...args}>
-        <Button.Icon>
-          <AiOutlinePayCircle />
-        </Button.Icon>
-        Clique aqui
-      </Button.Root>
-    </div>
-  )
-}
-
-export const IconeGrande: Story = {
-  args: {
-    bgcolor: 'transparent'
+    bgcolor: 'green'
   },
 
   argTypes: {
@@ -133,10 +71,10 @@ export const IconeGrande: Story = {
   },
 
   render: (args) => (
-    <div>
-      <Button.Root {...args}>
-        <Button.Icon size='lg'>
-          <AiOutlineUser />
+    <div style={{ padding: '25px 50px'}}>
+      <Button.Root iconPosition='top' {...args}>
+        <Button.Icon>
+          <span className="material-symbols-outlined">comment</span>
         </Button.Icon>
         Clique aqui
       </Button.Root>
@@ -146,13 +84,13 @@ export const IconeGrande: Story = {
 
 export const SemIcone: Story = {
   args: {
-    bgcolor: 'transparent',
+    bgcolor: 'green',
     active: true
   },
 
   argTypes: {
     bgcolor: {
-      options: ['transparent'],
+      options: ['green', 'orange', 'gray', 'pink', 'transparent'],
       control: {
         type: 'select'
       }
@@ -173,11 +111,12 @@ export const SemIcone: Story = {
 
 export const SemTexto: Story = {
   args: {
-    color: 'gray'
+    bgcolor: 'green'
   },
+
   argTypes: {
-    color: {
-      options: ['pink', 'blue', 'gray', 'green'],
+    bgcolor: {
+      options: ['green', 'orange', 'gray', 'pink', 'transparent'],
       control: {
         type: 'select'
       }
@@ -188,7 +127,7 @@ export const SemTexto: Story = {
     <div>
       <Button.Root {...args}>
         <Button.Icon size='lg'>
-          <AiOutlineBell />
+          <span className="material-symbols-outlined">notifications</span>
         </Button.Icon>
       </Button.Root>
     </div>
@@ -221,7 +160,7 @@ export const SemTextoRedondo: Story = {
     <div>
       <Button.Root {...args}>
         <Button.Icon>
-          <AiOutlineUser />
+          <span className="material-symbols-outlined">person_remove</span>
         </Button.Icon>
       </Button.Root>
     </div>

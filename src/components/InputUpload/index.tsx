@@ -1,11 +1,10 @@
-import React, { JSX, useId } from 'react'
-import { useState } from 'react'
+import React, { JSX, useId, useState } from 'react'
 import type { InputUploadContainerProps, InputUploadRootProps, InputUploadButtonProps } from './types'
-import './inputupload.css'
+import styles from './inputupload.module.css'
 
 export const InputUploadRoot = ({ children, className, ...props }: InputUploadRootProps): JSX.Element => {
   return (
-    <div className={`ds-inputUpload${className ? ` ${className}` : ''}`} {...props}>
+    <div className={`${styles.inputUpload} ${className || ''}`} {...props}>
       {children}
     </div>
   )
@@ -42,19 +41,18 @@ export const InputUploadContainer = ({
 
   return (
     <div
-      className={`ds-inputUpload__container${isDragging ? ' ds-inputUpload__container--dragging' : ''}`}
+      className={`${styles.inputUpload__container} ${isDragging ? styles.inputUpload__containerDragging : ''}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       {...props}
     >
       {children}
-      <label htmlFor={inputId} className='sr-only'>
-      </label>
+      <label htmlFor={inputId} className='sr-only'></label>
       <input
         id={inputId}
         type='file'
-        className='ds-inputUpload__input'
+        className={styles.inputUpload__input}
         multiple
         onChange={handleFileInputChange}
         aria-labelledby='upload-button-text'
@@ -67,7 +65,7 @@ export const InputUploadContainer = ({
 
 export const InputUploadButton = ({ children, ...props }: InputUploadButtonProps): JSX.Element => {
   return (
-    <button className='ds-inputUpload__button' id='upload-button-text' {...props}>
+    <button className={styles.inputUpload__button} id='upload-button-text' {...props}>
       {children}
     </button>
   )

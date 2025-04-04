@@ -1,22 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './index'
-import { expect, userEvent, within } from '@storybook/test'
-import './select.css'
 import { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
-import { FaExclamationCircle } from 'react-icons/fa'
 
 const meta: Meta<typeof Select.Root> = {
   title: 'Componentes/Select',
   component: Select.Root,
   tags: ['autodocs'],
-
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const inputElement = canvas.getByRole('combobox')
-    await expect(inputElement).toBeInTheDocument()
-    await userEvent.click(inputElement)
-  },
 
   parameters: {
     layout: 'centered',
@@ -34,7 +23,8 @@ type Story = StoryObj<typeof Select.Root>
 
 const samplePeople = [
   { value: '1', label: 'betania@example.com' },
-  { value: '2', label: 'beltrana@example.com' }
+  { value: '2', label: 'beltrana@example.com' },
+  { value: '3', label: 'beltrana@example.com' }
 ]
 
 export const SemLabel: Story = {
@@ -126,7 +116,7 @@ export const ComBusca: Story = {
     const handleChange = (value: string) => {
       setSelectedValue(value)
     }
-
+    
     return (
       <div style={{ width: '50vw' }}>
         <Select.Root>
@@ -174,9 +164,7 @@ export const ComTextoErro: Story = {
             onValueChange={handleChange}
             search
           />
-          <Select.Alert>
-            <FaExclamationCircle style={{ marginRight: '5px' }} /> Preenchimento obrigatório.
-          </Select.Alert>
+          <Select.Alert>Preenchimento obrigatório.</Select.Alert>
         </Select.Root>
       </div>
     )

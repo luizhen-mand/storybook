@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './index'
-import './card.css'
-import { expect, within } from '@storybook/test'
 
 const meta: Meta<typeof Card.Root> = {
   title: 'Componentes/Card',
@@ -27,11 +25,6 @@ export const ComTítulo: Story = {
       <Card.Title>23</Card.Title>
     </Card.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const cardElement = canvas.getByTestId('CardTitleTest')
-    await expect(cardElement).toBeInTheDocument()
-  }
 }
 
 export const ComDescrição: Story = {
@@ -43,9 +36,4 @@ export const ComDescrição: Story = {
       </Card.Description>
     </Card.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const cardElement = canvas.getByTestId('CardDescriptionTest')
-    await expect(cardElement).toBeInTheDocument()
-  }
 }

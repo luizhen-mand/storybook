@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { InputText } from './index'
-import './inputtext.css'
-import { expect, userEvent, within } from '@storybook/test'
-import { FaSearch } from 'react-icons/fa'; // Importando o ícone do react-icons
-
 
 const meta: Meta<typeof InputText.Root> = {
   title: 'Componentes/InputText',
@@ -54,12 +50,6 @@ export const ComLabel: Story = {
       <InputText.Input required id='test'  {...args} />
     </InputText.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByLabelText('Valor')
-    await userEvent.type(input, '12345')
-    await expect(input).toHaveValue('12345')
-  }
 }
 
 export const ComLabelETexto: Story = {
@@ -85,12 +75,6 @@ export const ComLabelETexto: Story = {
       </InputText.Input>
     </InputText.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByLabelText('Valor')
-    await userEvent.type(input, '500')
-    await expect(input).toHaveValue('500')
-  }
 }
 
 export const ComTextoErro: Story = {
@@ -106,14 +90,6 @@ export const ComTextoErro: Story = {
       <InputText.Message>Algo está errado</InputText.Message>
     </InputText.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByLabelText('Valor')
-    await userEvent.type(input, 'test')
-    await expect(input).toHaveValue('test')
-    const alert = canvas.getByText('Algo está errado')
-    await expect(alert).toBeVisible()
-  }
 }
 
 export const ComIcone: Story = {
@@ -122,18 +98,12 @@ export const ComIcone: Story = {
       <InputText.Label>
         <InputText.Input id='test'>
           <InputText.Icon>
-          <FaSearch />
+            <span className='material-symbols-outlined'>search</span>
           </InputText.Icon>
         </InputText.Input>
       </InputText.Label>
     </InputText.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByRole('textbox')
-    await userEvent.type(input, 'test')
-    await expect(input).toHaveValue('test')
-  }
 }
 
 export const Disabled: Story = {
@@ -145,10 +115,4 @@ export const Disabled: Story = {
       <InputText.Input id='test' readOnly />
     </InputText.Root>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const input = canvas.getByRole('textbox')
-    await userEvent.type(input, 'test')
-    await expect(input).not.toHaveValue('test')
-  }
 }

@@ -1,11 +1,11 @@
 import React, { JSX } from 'react'
 import type { CardProps, CardTitleProps, CardDescriptionProps } from './types'
-import './card.css'
+import styles from './card.module.css'
 
 function CardRoot({ children, className, onClick, ...props }: CardProps): JSX.Element {
   return (
     <div
-      className={`ds-card${className ? ` ${className}` : ''}`}
+      className={`${styles.card} ${className ? className : ''}`.trim()}
       data-testid='CardTest'
       onClick={onClick}
       {...props}
@@ -18,7 +18,7 @@ function CardRoot({ children, className, onClick, ...props }: CardProps): JSX.El
 function CardTitle({ children, ...props }: CardTitleProps): JSX.Element {
   return (
     <span
-      className='ds-card__title'
+      className={styles.card__title}
       data-testid='CardTitleTest'
       {...props}
     >
@@ -33,7 +33,7 @@ function CardDescription({
 }: CardDescriptionProps): JSX.Element {
   return (
     <span
-      className='ds-card__description'
+      className={styles.card__description}
       data-testid='CardDescriptionTest'
       {...props}
     >

@@ -1,0 +1,35 @@
+@import "../style.css";
+
+.ds-tooltip__trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    display: block;
+  }
+}
+
+.ds-tooltip__content {
+  background-color: var(--color-white);
+  padding: 20px 15px;
+  border-radius: 5px;
+
+  &[class*="--light"] {
+    border: 1px solid var(--color-gray300);
+    .ds-tooltip__arrow {
+      fill: var(--color-gray300);
+    }
+  }
+
+  &[class*="--dark"] {
+    border: 1px solid var(--color-gray700);
+    .ds-tooltip__arrow {
+      fill: var(--color-gray700);
+    }
+  }
+}
+
+[data-radix-popper-content-wrapper] {
+  z-index: 9 !important;
+}
