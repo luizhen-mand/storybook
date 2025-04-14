@@ -1,0 +1,369 @@
+@import "react-datepicker/dist/react-datepicker.css";
+@import "material-symbols";
+
+/* src/components/InputUpload/inputupload.module.css */
+.inputUpload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  padding: var(--spacing-lg);
+  border: 2px dashed var(--color-gray500);
+  border-radius: 8px;
+  background-color: var(--color-gray100);
+  transition: all 0.3s ease;
+}
+.inputUpload__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  min-height: 120px;
+  width: 100%;
+  border: 2px dashed var(--color-gray500);
+  border-radius: 8px;
+  background-color: var(--color-white);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.inputUpload__container:hover {
+  background-color: var(--color-gray200);
+  border-color: var(--color-gray700);
+}
+.inputUpload__containerDragging {
+  background-color: var(--color-gray300);
+  border-color: var(--color-blue);
+}
+.inputUpload__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.inputUpload__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--size-sm);
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+.inputUpload__button:hover {
+  background-color: var(--color-blue);
+}
+.inputUpload__button:focus {
+  outline: 2px solid var(--color-blue);
+}
+.material-symbols-outlined {
+  margin-right: var(--spacing-sm);
+}
+@media (max-width: var(--screen-tablet)) {
+  .inputUpload__container {
+    min-height: 100px;
+    padding: var(--spacing-md);
+  }
+  .inputUpload__button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--size-xs);
+  }
+  .inputUpload {
+    padding: var(--spacing-md);
+  }
+}
+@media (max-width: var(--screen-sm)) {
+  .inputUpload__container {
+    min-height: 80px;
+    padding: var(--spacing-xs);
+  }
+  .inputUpload__button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--size-xxs);
+  }
+  .inputUpload {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* src/components/Button/button.module.css */
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  gap: 10px;
+}
+.ds-button--green {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+.ds-button--orange {
+  background-color: var(--color-orange100);
+  color: var(--color-white);
+}
+.ds-button--gray {
+  background-color: var(--color-gray700);
+  color: var(--color-white);
+}
+.ds-button--pink {
+  background-color: var(--color-pink100);
+  color: var(--color-white);
+}
+.ds-button--transparent {
+  background-color: transparent;
+}
+.ds-button--top {
+  flex-direction: column;
+}
+.ds-button--textcolorlight {
+  color: var(--color-white);
+}
+.ds-button--textcolordark {
+  color: var(--color-gray900);
+}
+.ds-button--border {
+  border: 2px solid var(--color-gray900);
+}
+.ds-button--round {
+  width: 70%;
+  border-radius: 100%;
+}
+.ds-button--active {
+  transform: scale(1.05);
+}
+.ds-button__icon {
+  display: inline-flex;
+  align-items: center;
+}
+.ds-button__icon--sm {
+  font-size: 18px;
+}
+.ds-button__icon--lg {
+  font-size: 24px;
+}
+.ds-button--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+.ds-button--medium {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.ds-button--large {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+.ds-button:hover {
+  opacity: 0.8;
+}
+.ds-button--active:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* src/components/InputText/inputtext.module.css */
+.ds-inputtext {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+.ds-inputtext__wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray500);
+  border-radius: 6px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-white);
+  transition: border 0.2s ease-in-out;
+}
+.ds-inputtext__wrapper:focus-within {
+  border-color: var(--color-blue);
+}
+.ds-inputtext__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: var(--size-xs);
+  color: var(--text-color);
+  padding: var(--spacing-xs);
+  width: 100%;
+}
+.ds-inputtext__input::placeholder {
+  color: var(--color-gray700);
+  opacity: 0.7;
+}
+.ds-inputtext__input--error {
+  border-color: var(--color-pink200);
+}
+.ds-inputtext__label {
+  font-size: var(--size-xs);
+  color: var(--text-color);
+  font-weight: bold;
+}
+.ds-inputtext__label--required {
+  color: var(--color-pink200);
+  margin-left: var(--spacing-xs);
+}
+.ds-inputtext__alert {
+  font-size: var(--size-xxs);
+  color: var(--color-pink200);
+  margin-top: var(--spacing-xs);
+}
+.ds-inputtext__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  background: none;
+  border: none;
+  color: var(--color-gray800);
+}
+.ds-inputtext__icon:hover {
+  color: var(--color-blue);
+}
+@media (max-width: var(--screen-tablet)) {
+  .ds-inputtext__input {
+    font-size: var(--size-xxs);
+  }
+  .ds-inputtext__label {
+    font-size: var(--size-xxs);
+  }
+  .ds-inputtext__wrapper {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* src/components/style.css */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --font-family-default: "Quattrocento Sans", sans-serif;
+  --color-blue: #33A7EF;
+  --color-green: #10B17F;
+  --color-pink100: #EF339F;
+  --color-pink200: #E4003F;
+  --color-yellow: #EFD237;
+  --color-orange100: #EF8733;
+  --color-orange200: #ED5525;
+  --color-white: #FFFFFF;
+  --color-gray100: #FCFCFC;
+  --color-gray200: #F6F6F6;
+  --color-gray300: #EEEEEE;
+  --color-gray500: #CCCCCC;
+  --color-gray700: #808080;
+  --color-gray800: #434343;
+  --color-gray900: #333333;
+  --size-xxs: 14px;
+  --size-xs: 16px;
+  --size-sm: 20px;
+  --size-md: 24px;
+  --size-lg: 30px;
+  --size-xl: 54px;
+  --screen-sm: 325px;
+  --screen-md: 420px;
+  --screen-lg: 520px;
+  --screen-tablet: 768px;
+  --screen-laptop: 1024px;
+  --screen-desktop: 1440px;
+  --screen-widescreen: 1920px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+}
+[data-theme=dark] {
+  --background-color: #121212;
+  --text-color: white;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-family-default);
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+input {
+  outline: none;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* src/components/Card/card.module.css */
+.card {
+  background: var(--color-white);
+  border-radius: var(--spacing-sm);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.card__title {
+  font-size: var(--size-md);
+  font-weight: bold;
+  color: var(--color-gray900);
+}
+.card__description {
+  font-size: var(--size-xs);
+  color: var(--color-gray700);
+}
+@media (min-width: var(--screen-tablet)) {
+  .card {
+    max-width: 400px;
+  }
+}
+@media (max-width: var(--screen-sm)) {
+  .card {
+    padding: var(--spacing-sm);
+  }
+  .card__title {
+    font-size: var(--size-sm);
+  }
+  .card__description {
+    font-size: var(--size-xxs);
+  }
+}
+/*# sourceMappingURL=index.css.map */
