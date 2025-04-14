@@ -2,20 +2,21 @@
   "name": "@luizhen-mand/modulo-anexos-next",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/index.js",             
-  "module": "dist/index.mjs",           
-  "types": "dist/index.d.ts",           
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist"                              
+    "dist"
   ],
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "tsup",      
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
+"scripts": {
+  "dev": "next dev --turbopack",
+  "build": "tsup && npm run copy-css",
+  "copy-css": "cpx \"src/**/*.css\" dist",
+  "start": "next start",
+  "lint": "next lint",
+  "storybook": "storybook dev -p 6006",
+  "build-storybook": "storybook build"
+},
   "dependencies": {
     "@mui/icons-material": "^6.4.5",
     "@radix-ui/react-select": "^2.1.6",
@@ -49,6 +50,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-text-mask": "^5.4.14",
+    "cpx": "^1.5.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "eslint-plugin-storybook": "^0.11.3",
