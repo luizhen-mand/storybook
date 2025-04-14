@@ -1,0 +1,81 @@
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'material-symbols';
+
+:root {
+  --background-color: white;
+  --text-color: black;
+
+  --font-family-default: "Quattrocento Sans", sans-serif;
+
+  --color-blue: #33A7EF;
+  --color-green: #10B17F;
+  --color-pink100: #EF339F;
+  --color-pink200: #E4003F;
+  --color-yellow: #EFD237;
+  --color-orange100: #EF8733;
+  --color-orange200: #ED5525;
+  --color-white: #FFFFFF;
+  --color-gray100: #FCFCFC;
+  --color-gray200: #F6F6F6;
+  --color-gray300: #EEEEEE;
+  --color-gray500: #CCCCCC;
+  --color-gray700: #808080;
+  --color-gray800: #434343;
+  --color-gray900: #333333;
+
+  --size-xxs: 14px;
+  --size-xs: 16px;
+  --size-sm: 20px;
+  --size-md: 24px;
+  --size-lg: 30px;
+  --size-xl: 54px;
+
+  --screen-sm: 325px;
+  --screen-md: 420px;
+  --screen-lg: 520px;
+  --screen-tablet: 768px;
+  --screen-laptop: 1024px;
+  --screen-desktop: 1440px;
+  --screen-widescreen: 1920px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: white;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family-default);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}

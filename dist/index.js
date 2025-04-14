@@ -61,6 +61,7 @@ var index_exports = {};
 __export(index_exports, {
   Button: () => Button,
   Card: () => Card,
+  Header: () => Header,
   InputText: () => InputText,
   InputUpload: () => InputUpload,
   InputUploadButton: () => InputUploadButton,
@@ -313,10 +314,72 @@ var Card = {
   Title: CardTitle,
   Description: CardDescription
 };
+
+// src/components/Header/index.tsx
+var import_react5 = __toESM(require("react"));
+var import_link = __toESM(require("next/link"));
+
+// src/components/Header/header.module.css
+var header_default = {};
+
+// src/components/Header/index.tsx
+function HeaderRoot(_a) {
+  var _b = _a, { children, isFull, className } = _b, props = __objRest(_b, ["children", "isFull", "className"]);
+  return /* @__PURE__ */ import_react5.default.createElement(
+    "header",
+    __spreadValues({
+      className: `${header_default.header} ${isFull ? header_default["header--full"] : ""} ${className || ""}`.trim(),
+      "data-testid": "HeaderTest"
+    }, props),
+    children
+  );
+}
+function HeaderBrand(_a) {
+  var _b = _a, { children, url, ariaLabel } = _b, props = __objRest(_b, ["children", "url", "ariaLabel"]);
+  return /* @__PURE__ */ import_react5.default.createElement(
+    import_link.default,
+    __spreadValues({
+      href: url,
+      className: header_default.header__brand,
+      "data-testid": "HeaderBrandTest",
+      "aria-label": ariaLabel
+    }, props),
+    children
+  );
+}
+function HeaderContent(_a) {
+  var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ import_react5.default.createElement(
+    "div",
+    __spreadValues({
+      className: header_default.header__content,
+      "data-testid": "HeaderContentTest"
+    }, props),
+    children
+  );
+}
+function HeaderIcons(_a) {
+  var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
+  return /* @__PURE__ */ import_react5.default.createElement(
+    "div",
+    __spreadValues({
+      className: header_default["header__container-icons"],
+      "data-testid": "HeaderIconTest"
+    }, props),
+    children
+  );
+}
+var Header = {
+  Root: HeaderRoot,
+  Content: HeaderContent,
+  Brand: HeaderBrand,
+  Icons: HeaderIcons
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Button,
   Card,
+  Header,
   InputText,
   InputUpload,
   InputUploadButton,

@@ -1,0 +1,104 @@
+@import '../style.css';
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.ds-button--green {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.ds-button--orange {
+  background-color: var(--color-orange100);
+  color: var(--color-white);
+}
+
+.ds-button--gray {
+  background-color: var(--color-gray700);
+  color: var(--color-white);
+}
+
+.ds-button--pink {
+  background-color: var(--color-pink100);
+  color: var(--color-white);
+}
+
+.ds-button--transparent {
+  background-color: transparent;
+}
+
+.ds-button--top {
+  flex-direction: column;
+}
+
+.ds-button--textcolorlight {
+  color: var(--color-white);
+}
+
+.ds-button--textcolordark {
+  color: var(--color-gray900);
+}
+
+.ds-button--border {
+  border: 2px solid var(--color-gray900);
+}
+
+.ds-button--round {
+  width: 70%;
+  border-radius: 100%;
+}
+
+.ds-button--active {
+  transform: scale(1.05);
+}
+
+.ds-button__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ds-button__icon--sm {
+  font-size: 18px;
+}
+
+.ds-button__icon--lg {
+  font-size: 24px;
+}
+
+.ds-button--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.ds-button--medium {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.ds-button--large {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.ds-button:hover {
+  opacity: 0.8;
+}
+
+.ds-button--active:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}

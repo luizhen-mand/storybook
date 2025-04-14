@@ -110,4 +110,32 @@ declare const Card: {
     Description: typeof CardDescription;
 };
 
-export { Button, Card, InputText, InputUpload, InputUploadButton, InputUploadContainer, InputUploadRoot };
+interface HeaderProps {
+    children: ReactNode;
+    isFull: boolean;
+    className?: string;
+}
+interface HeaderBrandProps {
+    children: ReactNode;
+    url: string;
+    ariaLabel?: string;
+}
+interface HeaderContentProps {
+    children: ReactNode;
+}
+interface HeaderIconsProps {
+    children: ReactNode;
+}
+
+declare function HeaderRoot({ children, isFull, className, ...props }: HeaderProps): JSX.Element;
+declare function HeaderBrand({ children, url, ariaLabel, ...props }: HeaderBrandProps): JSX.Element;
+declare function HeaderContent({ children, ...props }: HeaderContentProps): JSX.Element;
+declare function HeaderIcons({ children, ...props }: HeaderIconsProps): JSX.Element;
+declare const Header: {
+    Root: typeof HeaderRoot;
+    Content: typeof HeaderContent;
+    Brand: typeof HeaderBrand;
+    Icons: typeof HeaderIcons;
+};
+
+export { Button, Card, Header, InputText, InputUpload, InputUploadButton, InputUploadContainer, InputUploadRoot };
